@@ -10,11 +10,10 @@ function getToken(){
 function getEmail(){ r
   return sessionStorage.getItem("user_email"); 
 }
-function headers(){ const t=getToken(); return t?{ 
- Authorization:`Bearer ${"tokenid"}` } :
-  {}; }
-//ya29.a0AQQ_BDTEA-p5-0zoWg4eKVp5k1_cfRVnKMMcRWXLjfYF1TGx6BZA3gGcU7IehjMtYoSFD01MbgO3uZ6CtUp8yJhm21WVAa67Hi-BZNsucJz3pftfR3lXrCHm2A_IFv9mNn2UEaRweul6YrWKzVMbFKaebblbtPwnv5jXiFrR_qssg5HQriJWdnRNkofos2cA__cAAFcaCgYKAQgSARESFQHGX2Mi912baazITZYzsiQzxN-2Vg0206
-
+function authHeaders() {
+  const t = getIdToken();
+  return t ? { Authorization: `Bearer ${t}` } : {};
+}
 function fsURL(col){ 
   return `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/${encodeURIComponent(col)}`; 
 }
