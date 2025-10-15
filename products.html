@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Product Collections</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Products - Online Shop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Product Collections</h1>
+  <header class="topbar">
+    <h1>Online Shop</h1>
+    <div class="header-right">
+      <div id="user-mini"></div>
+      <a href="index.html" class="link">Sign out</a>
+    </div>
+  </header>
 
-  <!-- Search Bar -->
-  <input type="text" id="search-bar" placeholder="Search products..." />
+  <main class="container">
+    <section class="search-row">
+      <input id="search-bar" placeholder="Search products or categories..." />
+      <div class="cart-mini">
+        <button id="view-cart">View Cart (<span id="cart-count">0</span>)</button>
+      </div>
+    </section>
 
-  <!-- Product List -->
-  <div id="product-list"></div>
+    <section id="products-grid"></section>
 
-  <!-- Pagination Controls -->
-  <div id="pagination">
-    <button id="prevBtn">Prev</button>
-    <span id="page-info"></span>
-    <button id="nextBtn">Next</button>
+    <div id="pagination" class="pagination"></div>
+
+    <hr/>
+    <section id="orders-section" class="card" style="display:none;">
+      <h3>Your Orders</h3>
+      <div id="orders-list"></div>
+    </section>
+  </main>
+
+  <div id="cart-modal" class="modal" style="display:none;">
+    <div class="modal-inner card">
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <p>Total: ₹<span id="cart-total">0</span></p>
+      <div class="row">
+        <button id="checkout-cash">Checkout - Cash</button>
+        <button id="checkout-credit">Checkout - Use Credit</button>
+        <button id="cart-close" class="btn-link">Close</button>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

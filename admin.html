@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Admin - Inventory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Admin Dashboard</h1>
+    <div class="header-right">
+      <a href="index.html" class="link">Sign out</a>
+      <a href="products.html" class="link">User View</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Create / Add Product</h3>
+      <div class="form-grid">
+        <input id="p-id" placeholder="Document ID (optional)" />
+        <input id="p-name" placeholder="Name / Title" />
+        <input id="p-cat" placeholder="Category" />
+        <input id="p-price" placeholder="Price" type="number" />
+        <input id="p-qty" placeholder="Quantity" type="number" />
+        <input id="p-image" placeholder="Image URL" />
+        <textarea id="p-desc" placeholder="Description"></textarea>
+      </div>
+      <div class="row">
+        <button id="btn-create">Create Product</button>
+        <button id="btn-refresh" class="btn-link">Refresh list</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Inventory</h3>
+      <input id="admin-search" placeholder="Search..." />
+      <div id="admin-list"></div>
+      <div id="admin-pagination"></div>
+    </section>
+
+    <section class="card">
+      <h3>Reports</h3>
+      <div class="row">
+        <button id="report-inventory">Inventory Report</button>
+        <button id="report-sales">Sales Report (All)</button>
+      </div>
+      <div id="report-output"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
+
