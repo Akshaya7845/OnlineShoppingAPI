@@ -160,4 +160,13 @@ window.addEventListener("load", () => {
   }
 });
 
+// open cart
+document.getElementById("view-cart").addEventListener("click", () => {
+  document.getElementById("cart-modal").style.display = "flex";
+});
+
+// close cart
+document.getElementById("cart-close").addEventListener("click", () => {
+  document.getElementById("cart-modal").style.display = "none";
+});
 

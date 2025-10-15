@@ -23,31 +23,38 @@
       </div>
     </section>
 
+    <!-- 🛍 Product List -->
     <section id="products-grid"></section>
 
+    <!-- 🔢 Pagination -->
     <div id="pagination" class="pagination"></div>
-
-    <hr/>
-    <section id="orders-section" class="card" style="display:none;">
-      <h3>Your Orders</h3>
-      <div id="orders-list"></div>
-    </section>
   </main>
 
+  <!-- 🛒 Cart Modal (orders inside modal) -->
   <div id="cart-modal" class="modal" style="display:none;">
     <div class="modal-inner card">
       <h3>Your Cart</h3>
       <div id="cart-items"></div>
       <p>Total: ₹<span id="cart-total">0</span></p>
+
       <div class="row">
         <button id="checkout-cash">Checkout - Cash</button>
         <button id="checkout-credit">Checkout - Use Credit</button>
         <button id="cart-close" class="btn-link">Close</button>
       </div>
+
+      <!-- ✅ Your Orders now inside modal -->
+      <div id="orders-section" style="display:none; margin-top: 20px;">
+        <h3>Your Orders</h3>
+        <div id="orders-list"></div>
+      </div>
     </div>
   </div>
 
+  <!-- axios + app -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app.js"></script>
+  
+
 </body>
 </html>
